@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 const number = 33;
+const flag = true;
 
 function App() {
   return (
@@ -14,12 +15,27 @@ function App() {
         </p>
         <p style={{
           color: 'blue'
-        }}>Hello!</p>
+        }}>Добавим стили</p>
         <p>
-          {number}
+          Выведем значение переменной number: {number}
         </p>
         <p>
-          {54}
+          Вывод числа: {54}
+        </p>
+        <p>
+          Вывод результата арифметической операции number + 67: {number + 67}
+        </p>
+        <p>
+          Вывод результата логической операции с переменной flag: {flag && 'flag is true'}
+        </p>
+        <p>
+          Использования тернарного условия с переменной flag: {flag ? 'flag is true': 'flag is false'}
+        </p>
+        <p>
+          {null}
+          {undefined}
+          {false}
+          {true}
         </p>
         <a
           className="App-link"
