@@ -3,13 +3,19 @@ import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 
-const todoItem = 'Закончить модуль по React'
+const App = () => {
+const items = [
+  {value: 'Закончить модуль по React'},
+  {value: 'Пройти модуль Трудоустройство'},
+  {value: 'Подготовится к собеседованию'}
+];
 
-const App = () => (<div>
-  <h1>Важные дела:</h1>
-  <InputItem />
-  <ItemList todoItem={todoItem} />
-  <Footer count={3} />
-</div>);
+  return (<div>
+    <h1>Важные дела:</h1>
+    <InputItem />
+    <ItemList items={items} />
+    <Footer count={3} />
+  </div>)
+};
 
 export default App;
