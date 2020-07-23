@@ -6,9 +6,18 @@ import styles from './App.module.css';
 
 const App = () => {
 const items = [
-  {value: 'Закончить модуль по React'},
-  {value: 'Пройти модуль Трудоустройство'},
-  {value: 'Подготовится к собеседованию'}
+  {
+    value: 'Закончить модуль по React',
+    isDone: true
+  },
+  {
+    value: 'Пройти модуль Трудоустройство',
+    isDone: false
+  },
+  {
+    value: 'Подготовится к собеседованию',
+    isDone: true
+  }
 ];
 
   return (<div className={styles.wrap}>
