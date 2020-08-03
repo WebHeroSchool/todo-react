@@ -5,10 +5,10 @@ import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
 const App = () => {
-const items = [
+const tasks = [
   {
     value: 'Закончить модуль по React',
-    isDone: true
+    isDone: false
   },
   {
     value: 'Пройти модуль Трудоустройство',
@@ -20,11 +20,13 @@ const items = [
   }
 ];
 
+let unCompletedTasks = tasks.filter(task => task.isDone === false);
+
   return (<div className={styles.wrap}>
     <h1 className={styles.title}>Важные дела:</h1>
     <InputItem />
-    <ItemList items={items} />
-    <Footer count={3} />
+    <ItemList tasks={tasks} />
+    <Footer count={unCompletedTasks.length} />
   </div>)
 };
 
