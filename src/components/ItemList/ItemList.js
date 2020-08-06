@@ -3,19 +3,20 @@ import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const ItemList = ( {tasks} ) => {
+const ItemList = ( {tasks, onClickDone} ) => {
   return(<ul>
   {tasks.map( task => 
     <li className={styles.li} key={task.value}>
       <Checkbox 
-      value="checkedLeft"
-      inputProps={{
-        'aria-label': 'primary checkbox',
-      }} 
-      onChange />
-      <Item value={task.value} isDone={task.isDone} />
+        value="checkedA"
+        checked={task.isDone}
+        inputProps={{
+          'aria-label': 'primary checkbox',
+        }} 
+        onClick={() => onClickDone(task.isDone) } />
+      <Item value={task.value} isDone={task.isDone} onClickDone={onClickDone} />
       <Checkbox
-        value="checkedRight"
+        value="checkedF"
         indeterminate
         inputProps={{
           'aria-label': 'indeterminate checkbox',
