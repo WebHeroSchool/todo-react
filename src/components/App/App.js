@@ -23,13 +23,13 @@ class App extends React.Component {
   }
 
   render () {
-    let unCompletedTasks = this.state.tasks.filter(task => task.isDone === false);
+    let uncompletedTasks = this.state.tasks.filter(task => task.isDone === false);
     
       return (<div className={styles.wrap}>
         <h1 className={styles.title}>Важные дела:</h1>
         <InputItem />
         <ItemList tasks={this.state.tasks} />
-        <Footer count={unCompletedTasks.length} />
+        <Footer count={uncompletedTasks.length} />
       </div>)
   }
 };
