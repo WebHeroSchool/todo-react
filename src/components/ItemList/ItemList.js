@@ -13,7 +13,6 @@ const ItemList = ( {tasks, onClickDone} ) => {
         inputProps={{
           'aria-label': 'primary checkbox',
         }} 
-        onChange 
         onClick={() => onClickDone(task.isDone) } />
       <Item value={task.value} isDone={task.isDone} onClickDone={onClickDone} />
       <Checkbox
