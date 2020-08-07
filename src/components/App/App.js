@@ -22,7 +22,8 @@ class App extends React.Component {
     ]
   };
 
-  onClickDone = (isDone) => console.warn(isDone);
+  // eslint-disable-next-line no-console
+  onClickDone = (isDone) => console.log(isDone);
 
   render () {
     let uncompletedTasks = this.state.tasks.filter((task) => task.isDone === false);
