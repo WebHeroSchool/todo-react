@@ -3,7 +3,7 @@ import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
 
-const ItemList = ( {tasks, onClickDone} ) => {
+const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
   return(<ul>
   {tasks.map( task => 
     <li className={styles.li} key={task.value}>
@@ -15,6 +15,7 @@ const ItemList = ( {tasks, onClickDone} ) => {
         isDone={task.isDone} 
         />
       <Checkbox
+        onClick={() => onClickDelete(task.id)}
         value="checkedRight"
         indeterminate
         inputProps={{

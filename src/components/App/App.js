@@ -25,7 +25,6 @@ class App extends React.Component {
     ]
   };
 
-  // eslint-disable-next-line no-console
   onClickDone = (id) => {
     const newTaskList = this.state.tasks.map(task => {
       const newTask = { ...task };
@@ -39,13 +38,23 @@ class App extends React.Component {
     this.setState({ tasks: newTaskList });
   };
 
+  onClickDelete = (id) => {
+    const newTaskList = this.state.tasks.filter(task => {
+      return task.id !== id;
+    })
+    this.setState({ tasks: newTaskList });
+  }
+
   render () {
     let uncompletedTasks = this.state.tasks.filter((task) => task.isDone === false);
     
       return (<div className={styles.wrap}>
         <h1 className={styles.title}>Важные дела:</h1>
         <InputItem />
-        <ItemList tasks={this.state.tasks} onClickDone={this.onClickDone} />
+        <ItemList 
+          tasks={this.state.tasks} 
+          onClickDone={this.onClickDone} 
+          onClickDelete={this.onClickDelete} />
         <Footer count={uncompletedTasks.length} />
       </div>)
   }
