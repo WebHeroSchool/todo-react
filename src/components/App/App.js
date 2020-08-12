@@ -26,7 +26,7 @@ class App extends React.Component {
   };
 
   onClickDone = (id) => {
-    const newTaskList = this.state.tasks.map(task => {
+    const newTaskList = this.state.tasks.map((task) => {
       const newTask = { ...task };
 
       if(task.id === id) {
@@ -34,14 +34,14 @@ class App extends React.Component {
       }
 
       return newTask;
-    })
+    });
     this.setState({ tasks: newTaskList });
   };
 
   onClickDelete = (id) => {
-    const newTaskList = this.state.tasks.filter(task => {
+    const newTaskList = this.state.tasks.filter((task) => {
       return task.id !== id;
-    })
+    });
     this.setState({ tasks: newTaskList });
   }
 
