@@ -9,8 +9,11 @@ const ItemList = ( {tasks, onClickDone} ) => {
     <li className={styles.li} key={task.value}>
       <Checkbox 
         checked={task.isDone} 
-        onClick={() => onClickDone(task.isDone)} />
-      <Item value={task.value} isDone={task.isDone} />
+        onClick={() => onClickDone(task.id)} />
+      <Item 
+        value={task.value} 
+        isDone={task.isDone} 
+        />
       <Checkbox
         value="checkedRight"
         indeterminate

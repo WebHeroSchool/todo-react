@@ -9,21 +9,35 @@ class App extends React.Component {
     tasks: [
       {
         value: 'Закончить модуль по React',
-        isDone: false
+        isDone: false,
+        id: 1
       },
       {
         value: 'Пройти модуль Трудоустройство',
-        isDone: false
+        isDone: false,
+        id: 2
       },
       {
         value: 'Подготовится к собеседованию',
-        isDone: true
+        isDone: true,
+        id: 3
       }
     ]
   };
 
   // eslint-disable-next-line no-console
-  onClickDone = (isDone) => console.log(isDone);
+  onClickDone = (id) => {
+    const newTaskList = this.state.tasks.map(task => {
+      const newTask = { ...task };
+
+      if(task.id === id) {
+        newTask.isDone = !task.isDone;
+      }
+
+      return newTask;
+    })
+    this.setState({ tasks: newTaskList });
+  };
 
   render () {
     let uncompletedTasks = this.state.tasks.filter((task) => task.isDone === false);
