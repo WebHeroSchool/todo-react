@@ -25,9 +25,8 @@ class App extends React.Component {
     ]
   };
 
-  // eslint-disable-next-line no-console
   onClickDone = (id) => {
-    const newTaskList = this.state.tasks.map(task => {
+    const newTaskList = this.state.tasks.map((task) => {
       const newTask = { ...task };
 
       if(task.id === id) {
@@ -35,7 +34,7 @@ class App extends React.Component {
       }
 
       return newTask;
-    })
+    });
     this.setState({ tasks: newTaskList });
   };
 
