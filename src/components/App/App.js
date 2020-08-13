@@ -48,7 +48,7 @@ class App extends React.Component {
   };
 
   onClickAdd = (value) => {
-    if(value !== '') {
+    if(value !== "") {
       this.setState((state) => ({
         tasks: [
           ...state.tasks,
@@ -60,7 +60,8 @@ class App extends React.Component {
         ],
         count: state.count + 1,
         error: false
-      }))} else {
+      }));
+    } else {
         this.setState((state) => ({error: true}));
       }
     };

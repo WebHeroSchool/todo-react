@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './InputItem.module.css';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import classnames from 'classnames';
+import Button from "@material-ui/core/Button";
+import classnames from "classnames";
 
 class InputItem extends React.Component {
   state = {
-    inputValue: ''
+    inputValue: ""
   };
 
   onButtonClick = () => {
@@ -29,7 +29,7 @@ class InputItem extends React.Component {
         error={this.props.error}
         value={this.state.inputValue}
         onChange={(event) => { 
-          this.setState({ inputValue: event.target.value.toUpperCase() }) 
+          this.setState({ inputValue: event.target.value.toUpperCase() });
         }} 
         />
       <Button
@@ -40,7 +40,7 @@ class InputItem extends React.Component {
         onClick={this.onButtonClick} >
         Добавить
       </Button>
-    </div>)
+    </div>);
   }
 }
 
