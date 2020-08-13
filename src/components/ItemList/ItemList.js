@@ -6,7 +6,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
   return(<ul>
   {tasks.map( task => 
-    <li className={styles.li} key={task.value}>
+    <li className={styles.li} key={task.id}>
       <Checkbox 
         checked={task.isDone} 
         onClick={() => onClickDone(task.id)} />
