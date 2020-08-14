@@ -2,6 +2,7 @@ import React from 'react';
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
+import PropTypes from 'prop-types';
 
 const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
   return(<ul>
@@ -33,6 +34,10 @@ const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
         isDone: false
       }
     ]
+  };
+
+  ItemList.proptypes = {
+    tasks: PropTypes.array.isRequired
   };
 
 export default ItemList;

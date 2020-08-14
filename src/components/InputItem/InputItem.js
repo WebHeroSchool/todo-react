@@ -3,6 +3,7 @@ import styles from './InputItem.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 import classnames from "classnames";
+import PropTypes from 'prop-types';
 
 class InputItem extends React.Component {
   state = {
@@ -16,10 +17,17 @@ class InputItem extends React.Component {
     this.props.onClickAdd(this.state.inputValue);
   }
 
-
-
   render() {
     const {onClickAdd} = this.props;
+
+    InputItem.propTypes = {
+      error: PropTypes.bool.isRequired,
+      helperText: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired
+      ])
+    };
     
     return (<div>
       <div className={styles.textDiv}>
