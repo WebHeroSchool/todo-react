@@ -2,7 +2,7 @@ import React from 'react';
 import Item from '../Item/Item';
 import styles from './ItemList.module.css';
 import Checkbox from '@material-ui/core/Checkbox';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
   return(<ul>
