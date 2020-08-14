@@ -22,7 +22,10 @@ class App extends React.Component {
         isDone: true,
         id: 3
       }
-    ]
+    ],
+    count: 3,
+    error: false,
+    helperText: ""
   };
 
   onClickDone = (id) => {
@@ -43,19 +46,45 @@ class App extends React.Component {
       return task.id !== id;
     });
     this.setState({ tasks: newTaskList });
-  }
+  };
+
+  onClickAdd = (value) => {
+    if(value !== "") {
+      this.setState((state) => ({
+        tasks: [
+          ...state.tasks,
+          {
+            value,
+            isDone: false,
+            id: state.count + 1
+          }
+        ],
+        count: state.count + 1,
+        error: false,
+        helperText: ""
+      }));
+    } else {
+        this.setState((state) => ({
+          error: true,
+          helperText: "Пустое поле"
+        }));
+      }
+    };
 
   render () {
-    let uncompletedTasks = this.state.tasks.filter((task) => task.isDone === false);
-    
       return (<div className={styles.wrap}>
         <h1 className={styles.title}>Важные дела:</h1>
-        <InputItem />
+        <InputItem 
+        onClickAdd={this.onClickAdd}
+        error={this.state.error}
+        helperText={this.state.helperText} 
+        />
         <ItemList 
           tasks={this.state.tasks} 
           onClickDone={this.onClickDone} 
-          onClickDelete={this.onClickDelete} />
-        <Footer count={uncompletedTasks.length} />
+          onClickDelete={this.onClickDelete} 
+          />
+        <Footer count={this.state.count} />
       </div>)
   }
 };
