@@ -29,10 +29,10 @@ const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
   ItemList.defaultProps = {
     tasks: [
       {
-        value: 'Задания не найдены',
+        value: "Задания не найдены",
         isDone: false
       }
     ]
-  }
+  };
 
 export default ItemList;
