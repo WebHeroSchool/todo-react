@@ -11,4 +11,8 @@ const Item = ( {value, isDone} ) => (<span className={
   {value}
 </span>)
 
+Item.defaultProps = {
+  value: "Пусто"
+};
+
 export default Item;
