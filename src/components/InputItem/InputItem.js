@@ -22,16 +22,21 @@ class InputItem extends React.Component {
     const {onClickAdd} = this.props;
     
     return (<div>
-      <TextField
-        id="standard-search" 
-        label="Добавить задание" 
-        type="search"
-        error={this.props.error}
-        value={this.state.inputValue}
-        onChange={(event) => { 
-          this.setState({ inputValue: event.target.value.toUpperCase() });
-        }} 
+      <div className={styles.textDiv}>
+        <TextField
+          className={styles.textField}
+          id="standard-search"
+          label="Добавить задание"
+          type="search"
+          fullWidth
+          helperText={this.props.helperText}
+          error={this.props.error}
+          value={this.state.inputValue}
+          onChange={(event) => {
+            this.setState({ inputValue: event.target.value.toUpperCase() });
+          }}
         />
+      </div>
       <Button
         variant='contained'
         color='primary'

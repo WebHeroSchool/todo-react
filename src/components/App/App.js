@@ -24,7 +24,8 @@ class App extends React.Component {
       }
     ],
     count: 3,
-    error: false
+    error: false,
+    helperText: ""
   };
 
   onClickDone = (id) => {
@@ -59,10 +60,14 @@ class App extends React.Component {
           }
         ],
         count: state.count + 1,
-        error: false
+        error: false,
+        helperText: ""
       }));
     } else {
-        this.setState((state) => ({error: true}));
+        this.setState((state) => ({
+          error: true,
+          helperText: "Пустое поле"
+        }));
       }
     };
 
@@ -71,7 +76,8 @@ class App extends React.Component {
         <h1 className={styles.title}>Важные дела:</h1>
         <InputItem 
         onClickAdd={this.onClickAdd}
-        error={this.state.error} 
+        error={this.state.error}
+        helperText={this.state.helperText} 
         />
         <ItemList 
           tasks={this.state.tasks} 
