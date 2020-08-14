@@ -26,4 +26,13 @@ const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
   </ul>)
   };
 
+  ItemList.defaultProps = {
+    tasks: [
+      {
+        value: 'Задания не найдены',
+        isDone: false
+      }
+    ]
+  }
+
 export default ItemList;
