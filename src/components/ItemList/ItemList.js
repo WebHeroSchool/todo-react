@@ -36,7 +36,7 @@ const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
     ]
   };
 
-  ItemList.proptypes = {
+  ItemList.propTypes = {
     tasks: PropTypes.array.isRequired
   };
 
