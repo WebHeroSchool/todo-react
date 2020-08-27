@@ -5,17 +5,17 @@ import PropTypes from "prop-types";
 
 class Item extends React.Component {
   componentDidMount() {
-    /* eslint no-console: "error" */
+    // eslint-disable-next-line no-console
     console.log("componentDidMount");
   }
 
   componentDidUpdate() {
-    /* eslint no-console: "error" */
+    // eslint-disable-next-line no-console
     console.log("componentDidUpdate");
   }
 
   componentWillUnmount() {
-    /* eslint no-console: "error" */
+    // eslint-disable-next-line no-console
     console.log("componentWillUnmount");
   }
 
