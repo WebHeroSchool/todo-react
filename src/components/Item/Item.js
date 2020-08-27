@@ -5,9 +5,9 @@ import PropTypes from "prop-types";
 
 class Item extends React.Component {
   componentDidMount() {
-    // eslint-disable-next-line no-console
     this.timerId = setInterval(() => {
-      console.log("Interval")
+      // eslint-disable-next-line no-console
+      console.log("Interval");
     }, 1000);
   }
 
