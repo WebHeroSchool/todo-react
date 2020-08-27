@@ -19,9 +19,8 @@ class Item extends React.Component {
     console.log("componentWillUnmount");
   }
 
-  render() {
-    const {value, isDone} = this.props;
-
+  render( {value, isDone} = this.props ) {
+    
     Item.defaultProps = {
       value: "Пусто"
     };
