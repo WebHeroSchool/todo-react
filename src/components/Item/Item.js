@@ -5,14 +5,17 @@ import PropTypes from "prop-types";
 
 class Item extends React.Component {
   componentDidMount() {
+    /* eslint no-console: "error" */
     console.log("componentDidMount");
   }
 
   componentDidUpdate() {
+    /* eslint no-console: "error" */
     console.log("componentDidUpdate");
   }
 
   componentWillUnmount() {
+    /* eslint no-console: "error" */
     console.log("componentWillUnmount");
   }
 
@@ -36,7 +39,7 @@ class Item extends React.Component {
       }>
         {value}
       </span>
-    )
+    );
   }
 }
 
