@@ -6,7 +6,9 @@ import PropTypes from "prop-types";
 class Item extends React.Component {
   componentDidMount() {
     // eslint-disable-next-line no-console
-    console.log("componentDidMount");
+    this.timerId = setInterval(() => {
+      console.log("Interval")
+    }, 1000);
   }
 
   componentDidUpdate() {
@@ -17,10 +19,11 @@ class Item extends React.Component {
   componentWillUnmount() {
     // eslint-disable-next-line no-console
     console.log("componentWillUnmount");
+    clearInterval(this.timerId);
   }
 
   render( {value, isDone} = this.props ) {
-    
+
     Item.defaultProps = {
       value: "Пусто"
     };
