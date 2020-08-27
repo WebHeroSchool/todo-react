@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './InputItem.module.css';
 import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
-import classnames from "classnames";
 import PropTypes from "prop-types";
 
 class InputItem extends React.Component {
@@ -18,7 +17,6 @@ class InputItem extends React.Component {
   }
 
   render() {
-    const {onClickAdd} = this.props;
 
     InputItem.propTypes = {
       error: PropTypes.bool.isRequired,

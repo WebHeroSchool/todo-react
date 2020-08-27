@@ -19,7 +19,7 @@ class Item extends React.Component {
     console.log("componentWillUnmount");
   }
 
-  render () {
+  render() {
     const {value, isDone} = this.props;
 
     Item.defaultProps = {
