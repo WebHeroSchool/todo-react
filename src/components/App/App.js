@@ -36,9 +36,9 @@ const App = () => {
   const [helperText, setHelperText] = useState(initialState.helperText);
 
   // eslint-disable-next-line no-console
-  useEffect(() => {console.log("componentDidMount")}, []);
+  useEffect(() => {console.log("componentDidMount");}, []);
   // eslint-disable-next-line no-console
-  useEffect(() => {console.log("componentDidUpdate")});
+  useEffect(() => {console.log("componentDidUpdate");});
 
   const onClickDone = (id) => {
     const newTaskList = tasks.map((task) => {
