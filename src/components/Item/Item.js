@@ -4,23 +4,23 @@ import classnames from 'classnames';
 import PropTypes from "prop-types";
 
 class Item extends React.Component {
-  componentDidMount() {
-    this.timerId = setInterval(() => {
-      // eslint-disable-next-line no-console
-      console.log("Interval");
-    }, 1000);
-  }
+  // componentDidMount() {
+  //   this.timerId = setInterval(() => {
+  //     // eslint-disable-next-line no-console
+  //     console.log("Interval");
+  //   }, 1000);
+  // }
 
-  componentDidUpdate() {
-    // eslint-disable-next-line no-console
-    console.log("componentDidUpdate");
-  }
+  // componentDidUpdate() {
+  //   // eslint-disable-next-line no-console
+  //   console.log("componentDidUpdate");
+  // }
 
-  componentWillUnmount() {
-    // eslint-disable-next-line no-console
-    console.log("componentWillUnmount");
-    clearInterval(this.timerId);
-  }
+  // componentWillUnmount() {
+  //   // eslint-disable-next-line no-console
+  //   console.log("componentWillUnmount");
+  //   clearInterval(this.timerId);
+  // }
 
   render( {value, isDone} = this.props ) {
 
