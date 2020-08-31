@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Card from '@material-ui/core/Card';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuList from '@material-ui/core/MenuList';
+import React, { useState, useEffect } from "react";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import Card from "@material-ui/core/Card";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
 
-import Todo from '../Todo/Todo';
-import About from '../About/About';
-import Contacts from '../Contacts/Contacts';
+import Todo from "../Todo/Todo";
+import About from "../About/About";
+import Contacts from "../Contacts/Contacts";
 
-import styles from './App.module.css';
+import styles from "./App.module.css";
 
 
 const App = () => (<Router>

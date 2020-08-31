@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
-import styles from './Todo.module.css';
+import React, { useState, useEffect } from "react";
+import InputItem from "../InputItem/InputItem";
+import ItemList from "../ItemList/ItemList";
+import Footer from "../Footer/Footer";
+import styles from "./Todo.module.css";
 
 
 
@@ -10,17 +10,17 @@ const Todo = () => {
   const initialState = {
     tasks: [
       {
-        value: 'Закончить модуль по React',
+        value: "Закончить модуль по React",
         isDone: false,
         id: 1
       },
       {
-        value: 'Пройти модуль Трудоустройство',
+        value: "Пройти модуль Трудоустройство",
         isDone: false,
         id: 2
       },
       {
-        value: 'Подготовится к собеседованию',
+        value: "Подготовится к собеседованию",
         isDone: true,
         id: 3
       }
@@ -94,7 +94,7 @@ const Todo = () => {
       onClickDelete={onClickDelete}
     />
     <Footer count={count} />
-  </div>)
+  </div>);
 };
 
 export default Todo;
