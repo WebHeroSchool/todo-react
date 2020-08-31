@@ -1,63 +1,32 @@
-import React from 'react';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
-import styles from './App.module.css';
+import React, { useState, useEffect } from "react";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import Card from "@material-ui/core/Card";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
 
-class App extends React.Component {
-  state = {
-    tasks: [
-      {
-        value: 'Закончить модуль по React',
-        isDone: false,
-        id: 1
-      },
-      {
-        value: 'Пройти модуль Трудоустройство',
-        isDone: false,
-        id: 2
-      },
-      {
-        value: 'Подготовится к собеседованию',
-        isDone: true,
-        id: 3
-      }
-    ]
-  };
+import Todo from "../Todo/Todo";
+import About from "../About/About";
+import Contacts from "../Contacts/Contacts";
 
-  onClickDone = (id) => {
-    const newTaskList = this.state.tasks.map((task) => {
-      const newTask = { ...task };
+import styles from "./App.module.css";
 
-      if(task.id === id) {
-        newTask.isDone = !task.isDone;
-      }
 
-      return newTask;
-    });
-    this.setState({ tasks: newTaskList });
-  };
+const App = () => (<Router>
+  <div className={styles.wrap}>
+    <Card className={styles.sidebar}>
+      <MenuList>
+        <Link className={styles.link} to='/'><MenuItem>Обо мне</MenuItem></Link>
+        <Link className={styles.link} to='/todo'><MenuItem>Дела</MenuItem></Link>
+        <Link className={styles.link} to='/contacts'><MenuItem>Контакты</MenuItem></Link>
+      </MenuList>
+    </Card>
 
-  onClickDelete = (id) => {
-    const newTaskList = this.state.tasks.filter((task) => {
-      return task.id !== id;
-    });
-    this.setState({ tasks: newTaskList });
-  }
-
-  render () {
-    let uncompletedTasks = this.state.tasks.filter((task) => task.isDone === false);
-    
-      return (<div className={styles.wrap}>
-        <h1 className={styles.title}>Важные дела:</h1>
-        <InputItem />
-        <ItemList 
-          tasks={this.state.tasks} 
-          onClickDone={this.onClickDone} 
-          onClickDelete={this.onClickDelete} />
-        <Footer count={uncompletedTasks.length} />
-      </div>)
-  }
-};
+    <Card className={styles.content}>
+      <Route path='/' exact component={About} />
+      <Route path='/todo' component={Todo} />
+      <Route path='/contacts' component={Contacts} />
+    </Card>
+  </div>
+</Router>);
 
 export default App;
