@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import Card from "@material-ui/core/Card";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -15,7 +15,7 @@ const App = () => (<Router>
   <div className={styles.wrap}>
     <Card className={styles.sidebar}>
       <MenuList>
-        <Link className={styles.link} to='/'><MenuItem>Обо мне</MenuItem></Link>
+        <Link className={styles.link} to='/'><MenuItem>GitHub</MenuItem></Link>
         <Link className={styles.link} to='/todo'><MenuItem>Дела</MenuItem></Link>
         <Link className={styles.link} to='/contacts'><MenuItem>Контакты</MenuItem></Link>
       </MenuList>
