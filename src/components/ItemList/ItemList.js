@@ -7,11 +7,11 @@ import PropTypes from "prop-types";
 const ItemList = ( {tasks, onClickDone, onClickDelete} ) => {
   return(<ul>
   {tasks.map( task => 
-    <li className={styles.li} key={task.id}>
+    <li className={styles.li} key={task.id} >
       <Checkbox 
         checked={task.isDone} 
         onClick={() => onClickDone(task.id)} />
-      <Item 
+      <Item
         value={task.value} 
         isDone={task.isDone} 
         />

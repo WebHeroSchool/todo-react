@@ -10,22 +10,13 @@ const Todo = () => {
   const initialState = {
     tasks: [
       {
-        value: "Закончить модуль по React",
+        value: "Дело 1",
         isDone: false,
         id: 1
-      },
-      {
-        value: "Пройти модуль Трудоустройство",
-        isDone: false,
-        id: 2
-      },
-      {
-        value: "Подготовится к собеседованию",
-        isDone: true,
-        id: 3
       }
     ],
-    count: 3,
+    count: 1,
+    filter: "allTask",
     error: false,
     helperText: ""
   };
@@ -33,6 +24,7 @@ const Todo = () => {
   const [tasks, setTasks] = useState(initialState.tasks);
   const [count, setCount] = useState(initialState.count);
   const [error, setError] = useState(initialState.error);
+  const [filter, setFilter] = useState(initialState.filter);
   const [helperText, setHelperText] = useState(initialState.helperText);
 
   // eslint-disable-next-line no-console
@@ -81,8 +73,27 @@ const Todo = () => {
     }
   };
 
+  const executedTaskLength = () => {
+        let res = tasks.filter((task) => {
+          return(task.isDone)
+        });
+        return (res.length);
+      };
+
+  const unfulfilledTaskLength = () => {
+    let res = tasks.filter((task) => {
+      return (!task.isDone)
+    });
+    return (res.length);
+  };
+
+  let unfulfilledTask = unfulfilledTaskLength(tasks);
+  let executedTask = executedTaskLength(tasks);
+
+  
+
   return (<div className={styles.wrap}>
-    <h1 className={styles.title}>Важные дела:</h1>
+    <h1 className={styles.title}>Список дел:</h1>
     <InputItem
       onClickAdd={onClickAdd}
       error={error}
@@ -93,7 +104,10 @@ const Todo = () => {
       onClickDone={onClickDone}
       onClickDelete={onClickDelete}
     />
-    <Footer count={count} />
+    <Footer 
+      count={count}
+      unfulfilledTask={unfulfilledTask}
+      executedTask={executedTask} />
   </div>);
 };
 

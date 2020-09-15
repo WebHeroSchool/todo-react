@@ -4,15 +4,36 @@
 
 .header_elements {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .header_elementsImage {
   width: 150px;
+  padding: 10px;
+  border-radius: 37px;
 }
 
 .header_elementsText {
-  padding-right: 20px;
+  padding-right: 40px;
+}
+
+.elementsText_link {
+  color: #8b8383;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.elementsText_linkImg {
+  padding-right: 5px;
+  margin-bottom: -3px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.repo {
+  padding-left: 30px;
 }
 
 .errorMessage {
@@ -22,8 +43,14 @@
 
 .link {
   text-decoration: none;
+  padding: 10px 0 10px 10px;
 }
 
 .element {
   list-style-type: none;
+  border: 2px #8b8383 solid;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  width: 400px;
 }
+
