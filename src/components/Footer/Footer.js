@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.css';
 import PropTypes from "prop-types";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
 
 class Footer extends React.Component {
@@ -30,6 +30,6 @@ class Footer extends React.Component {
       </ul>
     );
   }
-};
+}
 
 export default Footer;

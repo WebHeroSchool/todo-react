@@ -75,14 +75,14 @@ const Todo = () => {
 
   const executedTaskLength = () => {
         let res = tasks.filter((task) => {
-          return(task.isDone)
+          return(task.isDone);
         });
         return (res.length);
       };
 
   const unfulfilledTaskLength = () => {
     let res = tasks.filter((task) => {
-      return (!task.isDone)
+      return (!task.isDone);
     });
     return (res.length);
   };

@@ -27,12 +27,11 @@ class About extends React.Component {
         isLoading: false,
         isError: true,
         errorMessage: "Репозиторий не найден"
-      })
+      });
     })
   }
 
   render({ isLoading, repoList, isError, errorMessage } = this.state) {
-
     return (
       <div>
         <div className={styles.header}>{isLoading ? <CircularProgress /> : !isError &&
@@ -58,6 +57,6 @@ class About extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default About;

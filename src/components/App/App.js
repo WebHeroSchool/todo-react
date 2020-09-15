@@ -14,8 +14,8 @@ const App = () => (<Router>
   <div className={styles.wrap}>
     <Card className={styles.sidebar}>
       <MenuList className={styles.sidebarList}>
-        <Link className={styles.link} activeClassName={styles.linkActive} to='/'><MenuItem>О себе</MenuItem></Link>
-        <Link className={styles.link} activeClassName={styles.linkTodo} to='/todo'><MenuItem>Дела</MenuItem></Link>
+        <Link className={styles.link} to='/'><MenuItem>О себе</MenuItem></Link>
+        <Link className={styles.link} to='/todo'><MenuItem>Дела</MenuItem></Link>
       </MenuList>
     </Card>
 

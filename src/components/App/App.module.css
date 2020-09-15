@@ -27,21 +27,6 @@ body {
   justify-content: space-around;
 }
 
-.linkActive,
-.linkTodo {
-  border: 2px solid #356EFF;
-  background-color: #356EFF;
-  color: white;
-  border-radius: 37px;
-  transition: .2s;
-}
-
-.linkActive:hover,
-.linkTodo:hover {
-  opacity: .7;
-  transition: .2s;
-}
-
 
 .content {
   grid-area: content;
@@ -54,3 +39,4 @@ body {
   text-decoration: none;
   color: black;
 }
+
