@@ -31,12 +31,12 @@ class About extends React.Component {
     });
   }
 
-  render({ isLoading, repoList, isError, errorMessage } = this.state) {
+  render() {
     return (
       <div>
-        <div className={styles.header}>{isLoading ? <CircularProgress /> : !isError &&
+        <div className={styles.header}>{this.state.isLoading ? <CircularProgress /> : !this.state.isError &&
           <div className={styles.header_elements}>
-            <img className={styles.header_elementsImage} src={repoList[0].owner.avatar_url} alt='Фото' ></img>
+            <img className={styles.header_elementsImage} src={this.state.repoList[0].owner.avatar_url} alt='Фото' ></img>
             <div className={styles.header_elementsText}>
               <h1 className={styles.elementsText_title}>Голубцов Сергей</h1>
               <p className={styles.elementsText_link}>from Kharkiv, Ukraine</p>
@@ -51,9 +51,9 @@ class About extends React.Component {
         }</div>
         <div>
           <h1 className={styles.repo}>Репозитории на github</h1>
-          {isError ? !isLoading && <p className={styles.errorMessage}>{errorMessage}</p> : (
-            !isLoading && <ol>
-            {repoList.map((repo) => (<li className={styles.element} key={repo.id}>
+          {this.state.isError ? !this.state.isLoading && <p className={styles.errorMessage}>{this.state.errorMessage}</p> : (
+            !this.state.isLoading && <ol>
+            {this.state.repoList.map((repo) => (<li className={styles.element} key={repo.id}>
               <a className={styles.link} href={repo.html_url} target="_blank" rel="noopener noreferrer" >{repo.name}</a>
             </li>))}</ol>)
           }
