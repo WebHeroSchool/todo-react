@@ -32,33 +32,32 @@ class About extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <div className={styles.header}>{this.state.isLoading ? <CircularProgress /> : !this.state.isError &&
-          <div className={styles.header_elements}>
-            <img className={styles.header_elementsImage} src={this.state.repoList[0].owner.avatar_url} alt='Фото' ></img>
-            <div className={styles.header_elementsText}>
-              <h1 className={styles.elementsText_title}>Голубцов Сергей</h1>
-              <p className={styles.elementsText_link}>from Kharkiv, Ukraine</p>
-              <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg} 
-                src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/mail.20386136.svg"
-                alt="meil"></img>golubtsovsergei581@gmail.com</p>
-              <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg} 
-                src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/telegram.4073458b.svg" 
-                alt="telegram" ></img>+380664206469</p>
-            </div>
+    return (<div>
+      <div className={styles.header}>{this.state.isLoading ? <CircularProgress /> : !this.state.isError &&
+        <div className={styles.header_elements}>
+          <img className={styles.header_elementsImage} src={this.state.repoList[0].owner.avatar_url} alt='Фото' ></img>
+          <div className={styles.header_elementsText}>
+            <h1 className={styles.elementsText_title}>Голубцов Сергей</h1>
+            <p className={styles.elementsText_link}>from Kharkiv, Ukraine</p>
+            <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg}
+              src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/mail.20386136.svg"
+              alt="meil"></img>golubtsovsergei581@gmail.com</p>
+            <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg}
+              src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/telegram.4073458b.svg"
+              alt="telegram" ></img>+380664206469</p>
           </div>
-        }</div>
-        <div>
-          <h1 className={styles.repo}>Репозитории на github</h1>
-          {this.state.isError ? !this.state.isLoading && <p className={styles.errorMessage}>{this.state.errorMessage}</p> : (
-            !this.state.isLoading && <ol>
+        </div>
+      }</div>
+      <div>
+        <h1 className={styles.repo}>Репозитории на github</h1>
+        {this.state.isError ? !this.state.isLoading && <p className={styles.errorMessage}>{this.state.errorMessage}</p> : (
+          !this.state.isLoading && <ol>
             {this.state.repoList.map((repo) => (<li className={styles.element} key={repo.id}>
               <a className={styles.link} href={repo.html_url} target="_blank" rel="noopener noreferrer" >{repo.name}</a>
             </li>))}</ol>)
-          }
-        </div>
+        }
       </div>
+    </div>
     );
   }
 }
