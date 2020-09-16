@@ -27,7 +27,6 @@ body {
   justify-content: space-around;
 }
 
-
 .content {
   grid-area: content;
   grid-row-start: 2;

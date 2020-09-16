@@ -28,7 +28,7 @@ class About extends React.Component {
         isError: true,
         errorMessage: "Репозиторий не найден"
       });
-    })
+    });
   }
 
   render({ isLoading, repoList, isError, errorMessage } = this.state) {
@@ -40,8 +40,12 @@ class About extends React.Component {
             <div className={styles.header_elementsText}>
               <h1 className={styles.elementsText_title}>Голубцов Сергей</h1>
               <p className={styles.elementsText_link}>from Kharkiv, Ukraine</p>
-              <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg} src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/mail.20386136.svg"></img>golubtsovsergei581@gmail.com</p>
-              <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg} src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/telegram.4073458b.svg"></img>+380664206469</p>
+              <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg} 
+                src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/mail.20386136.svg"
+                alt="meil"></img>golubtsovsergei581@gmail.com</p>
+              <p className={styles.elementsText_link}><img className={styles.elementsText_linkImg} 
+                src="https://sve-react-app-pjl1lsdf4.now.sh/static/media/telegram.4073458b.svg" 
+                alt="telegram" ></img>+380664206469</p>
             </div>
           </div>
         }</div>

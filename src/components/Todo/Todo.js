@@ -16,7 +16,6 @@ const Todo = () => {
       }
     ],
     count: 1,
-    filter: "allTask",
     error: false,
     helperText: ""
   };
@@ -24,7 +23,6 @@ const Todo = () => {
   const [tasks, setTasks] = useState(initialState.tasks);
   const [count, setCount] = useState(initialState.count);
   const [error, setError] = useState(initialState.error);
-  const [filter, setFilter] = useState(initialState.filter);
   const [helperText, setHelperText] = useState(initialState.helperText);
 
   // eslint-disable-next-line no-console
